@@ -19,7 +19,7 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.STRING
     },
     'date_of_birth': {
-      type: DataTypes.DATE
+      type: DataTypes.DATEONLY
     },
     'school': {
       type: DataTypes.STRING

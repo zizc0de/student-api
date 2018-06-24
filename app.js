@@ -12,6 +12,9 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(morgan());
 app.use(cors());
 
+const validator = require('./utils/custom_validators');
+app.use(validator);
+
 require('./v1/routes/index')(app);
 
 // CORS
