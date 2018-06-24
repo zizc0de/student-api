@@ -32,20 +32,12 @@ module.exports = function(sequelize, DataTypes) {
     },
     'bio': {
       type: DataTypes.TEXT
-    },
-    'createdAt': {
-      type: DataTypes.DATE,
-      defaultValue: Sequelize.NOW
-    },    
-    'updatedAt': {
-      type: DataTypes.DATE,
-      defaultValue: Sequelize.NOW
-    },
+    }
   }, {
     timestamp: true,
     createdAt: "created_at",
     updatedAt: "updated_at",
-    tableName: 'student',
+    tableName: 'students',
     classMethods: {
       associate: function(models) {
         // associations can be defined here
