@@ -59,7 +59,7 @@ passport.use(new JWTStrategy({
 function (jwtPayload, cb) {
 	models.User.findOne({
 		where: {
-			token: jwtPayload.id
+			id: jwtPayload.id
 		},
 		attributes: {
 			exclude: ['password']

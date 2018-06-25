@@ -1,3 +1,5 @@
+const passport = require('passport');
+
 let routes = function(app) {
 	const auth = require('./auth')(app);
 	const student = require('./student')(app);
@@ -5,7 +7,7 @@ let routes = function(app) {
 
 	app.use('/v1', auth);
 	app.use('/v1', student);
-	app.use('/v1', user);
+	app.use('/v1', passport.authenticate('jwt', {session: false}), user);
 	
 	return app;
 }
