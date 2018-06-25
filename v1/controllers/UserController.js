@@ -9,7 +9,11 @@ let UserController = function(app) {
 	let async = require('async');
 
 	let getAll = function(req, res) {
-		models.User.findAll()
+		models.User.findAll({
+			attributes: {
+				exclude: ['password', 'token']
+			}
+		})
 		.then(function(result) {
 			res.json({
 				users: result

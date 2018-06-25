@@ -36,7 +36,7 @@ function (username, password, cb) {
 					}
 				})
 				.then(function(user) {
-					user.update({ token: token });
+					user.update({ token: token, last_login: Date.now() });
 					return cb(null, user, { token: token, message: 'Logged In Successfully', success: true });
 				})
 				.catch(function(err) {
@@ -62,7 +62,7 @@ function (jwtPayload, cb) {
 			id: jwtPayload.id
 		},
 		attributes: {
-			exclude: ['password']
+			exclude: ['password', 'token']
 		}
 	})
 	.then(function(user) {
