@@ -24,8 +24,13 @@ function (username, password, cb) {
 	.then(function(user) {
 		if (user) {
 			if(bcrypt.compareSync(password, user.password)) {
-				const token = jwt.sign(user.toJSON(), config.supersecret, {
-					expiresIn : 60*60*24
+				let jwt_token = {
+					id: user.id,
+					username: user.username,
+					logged: true
+				}
+				const token = jwt.sign(jwt_token, config.supersecret, {
+					expiresIn : '24h'
 				});
 				models.User.findOne({
 					where: {
