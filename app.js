@@ -15,6 +15,7 @@ app.use(cors());
 const validator = require('./utils/custom_validators');
 app.use(validator);
 
+require('./passport.js');
 require('./v1/routes/index')(app);
 
 // CORS
