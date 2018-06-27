@@ -80,6 +80,7 @@ let StudentController = function(app) {
 			.then(function(result) {
 				res.status(201).json({
 					data: result,
+					message: 'Student successfully created',
 					success: true
 				});
 			})
@@ -103,6 +104,7 @@ let StudentController = function(app) {
 					student.update(req.body).then(function(result) {
 						res.json({
 							data: result,
+							message: 'Student successfully updated',
 							success: true
 						});
 					});

@@ -21,6 +21,22 @@ let UserController = function(app) {
 		})
 	}
 
+	let getById = function(req, res) {
+		models.User.findOne({
+			where: {
+				id: req.param('id')
+			},
+			attributes: {
+				exclude: ['password', 'token']
+			}
+		})
+		.then(function(result) {
+			res.json({
+				user: result
+			});
+		})
+	}
+
 	let create = function(req, res) {
 		req.checkBody(CreateRequest);
 		let errors = req.validationErrors();
@@ -38,7 +54,7 @@ let UserController = function(app) {
 					res.status(422).json({
 						errors: [{
 							param: "username",
-							msg: "Username already exists"
+							msg: "username already exists"
 						}
 						]
 					})
@@ -48,6 +64,7 @@ let UserController = function(app) {
 					.then(function(result) {
 						res.status(201).json({
 							data: result,
+							message: 'User successfully created',
 							success: true
 						});
 					})					
@@ -76,6 +93,7 @@ let UserController = function(app) {
 					user.update(req.body).then(function(result) {
 						res.json({
 							data: result,
+							message: 'User successfully updated',
 							success: true
 						});
 					});
@@ -104,6 +122,7 @@ let UserController = function(app) {
 
 	return {
 		getAll: getAll,
+		getById: getById,
 		create: create,
 		update: update,
 		delete: remove
