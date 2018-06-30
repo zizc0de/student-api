@@ -13,7 +13,7 @@
 		"database": "dd4humiv50joab",
 		"host": "ec2-107-21-95-70.compute-1.amazonaws.com",
 		"port": "5432",
-		"dialect": "mysql"
+		"dialect": "postgres"
 	},
 	"supersecret": "z1Zc0d32018@#"
 }
