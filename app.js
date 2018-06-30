@@ -33,7 +33,7 @@ app.use(function(req, res, next) {
 	next(err);
 });
 
-console.log(app.get('env'));
+// console.log(app.get('env'));
 
 if (app.get('env') === 'development') {
 	app.use(function(err, req, res, next) {

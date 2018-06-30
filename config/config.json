@@ -1,11 +1,11 @@
 {
 	"development": {
-		"username": "root",
-		"password": "",
+		"username": "postgres",
+		"password": "z1zc0d3",
 		"database": "student_app",
 		"host": "127.0.0.1",
-		"port": "3306",
-		"dialect": "mysql"
+		"port": "5432",
+		"dialect": "postgres"
 	},
 	"production": {
 		"username": "",
