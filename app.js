@@ -3,6 +3,7 @@ const logger = require('morgan');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const morgan = require('morgan');
+const passport = require('passport');
 
 const app = express();
 
@@ -15,7 +16,9 @@ app.use(cors());
 const validator = require('./utils/custom_validators');
 app.use(validator);
 
+app.use(passport.initialize());
 require('./passport.js');
+
 require('./v1/routes/index')(app);
 
 // CORS
