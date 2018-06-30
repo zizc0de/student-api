@@ -8,10 +8,11 @@
 		"dialect": "postgres"
 	},
 	"production": {
-		"username": "",
-		"password": "",
-		"database": "",
-		"host": "",
+		"username": "kxkavipwjblcxf",
+		"password": "e680373ac5e8d2f9e627caf289a8b943bf1e5c4a264a239472dbbfe6953ec891",
+		"database": "dd4humiv50joab",
+		"host": "ec2-107-21-95-70.compute-1.amazonaws.com",
+		"port": "5432",
 		"dialect": "mysql"
 	},
 	"supersecret": "z1Zc0d32018@#"
